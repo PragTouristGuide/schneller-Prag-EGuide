@@ -10,7 +10,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 ----------------------------------------------*/
 const pointsData = [
   // hlavní památky (5)
-  { id:'hrad',   title:'Pražský hrad',           lat:50.0903, lng:14.3989, category:'sights', video:'0fCOJPyp2C4', audio:'audio/hrad.mp3', readUrl:'/detail/hrad.html' },
+  { id:'hrad',   title:'Pražský hrad',           lat:50.0903, lng:14.3989, category:'sights', video:'0fCOJPyp2C4', audio:'audio/hrad.mp3', readUrl:'https://www.pragtourist.cz/prager-burg/' },
   { id:'stare',  title:'Staroměstské náměstí',   lat:50.0875, lng:14.4212, category:'sights', video:'VIDEO_ID_2', audio:'audio/staromestske.mp3', readUrl:'/detail/staromestske.html' },
   { id:'zid',    title:'Židovská čtvrť',         lat:50.089641,lng:14.417987, category:'sights', video:'VIDEO_ID_3', audio:'audio/zidovska.mp3', readUrl:'/detail/zidovska.html' },
   { id:'most',   title:'Karlův most',            lat:50.0865, lng:14.4125, category:'sights', video:'VIDEO_ID_4', audio:'audio/karluv.mp3', readUrl:'/detail/karluv.html' },
@@ -294,4 +294,5 @@ function addPoint(p){
  - použij vlastní ikony v iconFor()
  - pokud chceš "přihlásit" stažení bodů, načítej externí JSON a volat addPoint()
 */
+
 
