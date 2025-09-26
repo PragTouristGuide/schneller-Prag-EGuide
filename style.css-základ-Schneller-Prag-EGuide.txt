@@ -1,0 +1,88 @@
+/* základ */
+html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif}
+#map{height:100vh;width:100%}
+
+/* locate button */
+#locateBtn{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:16px;
+  z-index:1200;
+  background:#fff;
+  border-radius:12px;
+  padding:10px 12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+  border:0;
+  font-size:16px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+#locateBtn span{font-weight:600}
+@media(max-width:768px){
+  #locateBtn{ top:10px; bottom:auto; width:86%; left:50%; transform:translateX(-50%); font-size:18px; padding:12px; border-radius:14px }
+}
+
+/* overlay (popup) */
+.eg-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+  padding:12px;
+  box-sizing:border-box;
+}
+
+.eg-card{
+  width:100%;
+  max-width:880px;
+  height:92vh;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 12px 36px rgba(0,0,0,0.35);
+}
+
+/* header */
+.eg-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #eee}
+.eg-title{font-size:18px;font-weight:700}
+.eg-close{background:transparent;border:0;font-size:22px;cursor:pointer;padding:6px 8px}
+
+/* tabs */
+.eg-tabs{display:flex;gap:8px;padding:8px 12px;border-bottom:1px solid #f0f0f0}
+.eg-tab{padding:8px 12px;border-radius:8px;background:#f6f6f6;border:1px solid #e6e6e6;cursor:pointer;font-weight:700}
+.eg-tab.active{background:#0b7;color:#fff;border-color:#0b7}
+
+/* media area */
+.eg-media{padding:10px 12px}
+.eg-iframe{width:100%;height:46vw;max-height:420px;border-radius:8px;border:0;background:#000}
+
+/* buttons area under media */
+.eg-playermode{display:flex;gap:8px;padding:10px 12px}
+.eg-playermode button{flex:1;padding:10px;border-radius:8px;border:0;background:#0b7;color:#fff;font-weight:700;cursor:pointer}
+
+/* content area (read or audio) */
+.eg-content{flex:1;padding:12px;overflow:auto;background:#fff}
+
+/* small audio control area */
+.audio-controls{display:flex;align-items:center;gap:8px}
+
+/* legend (custom look) + adjustment for leaflet layers control */
+.leaflet-control-layers{ box-shadow:0 6px 18px rgba(0,0,0,.12); border-radius:10px; padding:6px }
+
+/* marker cluster z-index */
+.leaflet-marker-icon{ z-index: 1100 }
+
+/* menší obrazovky */
+@media(max-width:420px){
+  .eg-card{max-width:100%;height:94vh;border-radius:8px}
+  .eg-iframe{height:60vw}
+  .eg-playermode button{font-size:14px;padding:8px}
+}
