@@ -1,35 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>PragBlick — e-guide</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prag E-Guide</title>
 
   <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-  <!-- tvoje styly -->
-  <link rel="stylesheet" href="style.css"/>
+  <!-- Vlastní styl -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div id="map"></div>
 
-  <!-- Finde mich -->
-  <button id="locateBtn" title="Finde mich">🎯 <span>Finde mich</span></button>
+  <button id="findMeBtn">📍 Finde mich</button>
 
-  <!-- Legend (Leaflet layers control bude nahoře vpravo) -->
-
-  <!-- Overlay container (popup) -->
-  <div id="overlayContainer"></div>
-
-  <!-- knihovny -->
+  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 
-  <!-- vlastní skript -->
+  <!-- Vlastní JS -->
   <script src="script.js"></script>
 </body>
 </html>
