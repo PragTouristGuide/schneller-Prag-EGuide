@@ -1,88 +1,108 @@
-/* základ */
-html,body{height:100%;margin:0;font-family:Arial,Helvetica,sans-serif}
-#map{height:100vh;width:100%}
-
-/* locate button */
-#locateBtn{
-  position:fixed;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:16px;
-  z-index:1200;
-  background:#fff;
-  border-radius:12px;
-  padding:10px 12px;
-  box-shadow:0 6px 18px rgba(0,0,0,.18);
-  border:0;
-  font-size:16px;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-#locateBtn span{font-weight:600}
-@media(max-width:768px){
-  #locateBtn{ top:10px; bottom:auto; width:86%; left:50%; transform:translateX(-50%); font-size:18px; padding:12px; border-radius:14px }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-/* overlay (popup) */
-.eg-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.55);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
-  padding:12px;
-  box-sizing:border-box;
+#map {
+  width: 100%;
+  height: 100%;
 }
 
-.eg-card{
-  width:100%;
-  max-width:880px;
-  height:92vh;
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  box-shadow:0 12px 36px rgba(0,0,0,0.35);
+/* tlačítko „Finde mich“ */
+#findMeBtn {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1000;
 }
 
-/* header */
-.eg-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #eee}
-.eg-title{font-size:18px;font-weight:700}
-.eg-close{background:transparent;border:0;font-size:22px;cursor:pointer;padding:6px 8px}
-
-/* tabs */
-.eg-tabs{display:flex;gap:8px;padding:8px 12px;border-bottom:1px solid #f0f0f0}
-.eg-tab{padding:8px 12px;border-radius:8px;background:#f6f6f6;border:1px solid #e6e6e6;cursor:pointer;font-weight:700}
-.eg-tab.active{background:#0b7;color:#fff;border-color:#0b7}
-
-/* media area */
-.eg-media{padding:10px 12px}
-.eg-iframe{width:100%;height:46vw;max-height:420px;border-radius:8px;border:0;background:#000}
-
-/* buttons area under media */
-.eg-playermode{display:flex;gap:8px;padding:10px 12px}
-.eg-playermode button{flex:1;padding:10px;border-radius:8px;border:0;background:#0b7;color:#fff;font-weight:700;cursor:pointer}
-
-/* content area (read or audio) */
-.eg-content{flex:1;padding:12px;overflow:auto;background:#fff}
-
-/* small audio control area */
-.audio-controls{display:flex;align-items:center;gap:8px}
-
-/* legend (custom look) + adjustment for leaflet layers control */
-.leaflet-control-layers{ box-shadow:0 6px 18px rgba(0,0,0,.12); border-radius:10px; padding:6px }
-
-/* marker cluster z-index */
-.leaflet-marker-icon{ z-index: 1100 }
-
-/* menší obrazovky */
-@media(max-width:420px){
-  .eg-card{max-width:100%;height:94vh;border-radius:8px}
-  .eg-iframe{height:60vw}
-  .eg-playermode button{font-size:14px;padding:8px}
+#findMeBtn:hover {
+  background-color: #0056b3;
 }
+
+/* popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* popup obsah */
+.popup-content {
+  background: #fff;
+  width: 90vw;
+  max-width: 450px;
+  height: 85vh;
+  border-radius: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.popup-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 35px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: none;
+  background: #eee;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tab-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.tab-content iframe {
+  width: 100%;
+  height: calc(90vw * 16 / 9); /* poměr 9:16 (vertikální video) */
+  max-height: 85%;
+  border-radius: 8px;
+  border: none;
+}
+
+audio {
+  width: 100%;
+  margin-top: 20px;
+}
+
