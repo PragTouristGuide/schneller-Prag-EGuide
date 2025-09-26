@@ -14,7 +14,7 @@ const pointsData = [
   { id:'stare',  title:'Staroměstské náměstí',   lat:50.0875, lng:14.4212, category:'sights', video:'VIDEO_ID_2', audio:'audio/staromestske.mp3', readUrl:'/detail/staromestske.html' },
   { id:'zid',    title:'Židovská čtvrť',         lat:50.089641,lng:14.417987, category:'sights', video:'VIDEO_ID_3', audio:'audio/zidovska.mp3', readUrl:'/detail/zidovska.html' },
   { id:'most',   title:'Karlův most',            lat:50.0865, lng:14.4125, category:'sights', video:'VIDEO_ID_4', audio:'audio/karluv.mp3', readUrl:'/detail/karluv.html' },
-  { id:'vaclav', title:'Václavské náměstí',      lat:50.0810, lng:14.4260, category:'sights', video:'VIDEO_ID_5', audio:'audio/vaclavske.mp3', readUrl:'/detail/vaclavske.html' },
+  { id:'vaclav', title:'Václavské náměstí',      lat:50.0810, lng:14.4260, category:'sights', video:'s4nHvs49424', audio:'audio/vaclavske.mp3', readUrl:'/detail/vaclavske.html' },
 
   // zkušební body: 2 WC
   { id:'wc1', title:'WC - Staroměstská', lat:50.0870, lng:14.4205, category:'toilets', video:'', audio:'', readUrl:'' },
@@ -294,3 +294,4 @@ function addPoint(p){
  - použij vlastní ikony v iconFor()
  - pokud chceš "přihlásit" stažení bodů, načítej externí JSON a volat addPoint()
 */
+
